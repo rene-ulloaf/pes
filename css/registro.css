@@ -1,0 +1,27 @@
+#REGISTRO{
+	width:600px;
+	
+	border-style:solid;
+	border-color:#000000;
+	border-width:1px;
+	
+	right:200px;
+	left:200px;
+	
+	position:absolute;
+}
+
+.titulo{
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: bold;
+	
+	border-style:solid;
+	border-width:1px;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	
+	background:#9ACD32;
+}

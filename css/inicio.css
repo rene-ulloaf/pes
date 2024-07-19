@@ -1,0 +1,72 @@
+body{
+	text-indent:2px;
+	text-align:justify;
+}
+
+.usuarioBienvenida{
+	Padding-left:500px;
+}
+
+.cajaBienvenida{
+	height:150px;
+	width:800px;
+	
+	border-style:dotted;
+	border-color:#DC143C;
+	
+	overflow:hidden
+}
+
+.tablaLogin{
+	display:block;
+	
+	top:17px;
+	left:830px;
+	position:absolute;
+	
+	height:100px;
+	width:130px;
+	
+	border-style:solid;
+	border-color:#000000;
+	border-width:1px;
+	
+	Padding-right:15px;
+	Padding-left:15px;
+}
+
+.celdas{
+	Padding:2px;
+}
+
+.head{
+	top:0px;
+	left:830px;
+	position:absolute;
+	
+	height:15px;
+	width:160px;
+	
+	font-weight:bold;
+	
+	text-align:center;
+	
+	background-color:#D0D0D0;
+	
+	border-style:solid;
+	border-width:1px;
+	border-bottom:none;
+	
+	Padding-bottom:3px;
+}
+
+.foot{
+	top:120px;
+	left:830px;
+	position:absolute;
+	
+	height:15px;
+	width:160px;
+	
+	text-align:center;
+}

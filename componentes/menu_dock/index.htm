@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Menu Dock</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script type="text/javascript" src="hide_menu.js"></script>
+<link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="hit_area" onmouseover="toggleDown();"></div>
+   <div id="menu_holder">
+      <div id="nav">
+           <ul>
+           <li><a href="http://jstween.blogspot.com">jstween</a></li>
+           <li><a href="http://ww.2210media.com">2210media</a></li>
+           <li><a href="http://www.digg.com">Digg</a></li>
+           <li><a href="http://www.cssmania.com">CSS Mania</a></li>
+           <li><a href="http://www.kirupa.com">Kirupa</a></li>
+           </ul>
+      </div>
+</div>
+<div id="hit_area2" onmouseover="toggleUp();">
+<div id="content">
+<h1>Webber 2.0 Dock Menu Tutorial</h1>
+  <p> In this short tutorial I will go though the CSS and a little bit of Javascript that creates the Webber 2.0 Dock Menu.</p>
+  <p>First things first though. I need to give credit where credit is due. I was browsing around the web and came across this site. <a href="http://whalesalad.com/" target="_blank">http://whalesalad.com/</a>. In one of his articles that he wrote, he built a similar menu that you can find here. <a href="http://www.whalesalad.com/2006/07/12/osx-style-web-dock/" target="_blank">http://www.whalesalad.com/2006/07/12/osx-style-web-dock/.</a> His attempt was fairly good, however it didn't work in any browser other than <a href="http://www.mozilla.com/firefox/" target="_blank">FireFox</a>. Well, to say the least, this wasn't very good as FireFox was only used by 28% of the web population last time I checked. I thought to myslef, I could do that menu fairly easily since the contact section of my site uses the same principal. So I gave it a shot. </p>
+  <p>The meat of the menu of course is the javascript. The javascript was written by Philippe Maegerman which you can find on his <a href="http://jstween.blogspot.com/" target="_blank">blog</a>. The hide_menu.js contains the tween.js code script needed to move the menu and two extra functions I added for the mouse events. However, on <a href="http://jstween.blogspot.com/" target="_blank">Philippe Maegerman's blog</a>, he has ColorTween.js, OpacityTween.js, TextTween.js, Sequence.js, and Parallel.js. All which can do marvelous effects to many many objects. I suggest that if you get some spare time, go check out his extensive tutorials on how to use them! On a side note, if you happen to know anything about the<a href="http://www.adobe.com/devnet/flash/articles/tweening.html" target="_blank"> tween.class</a> in Macromendia Flash, you will catch on to Philippe Maegerman's javascript very fast, as it uses <a href="http://www.robertpenner.com/" target="_blank">Robert Penner's</a> tween classes. Aren't we one big happy family! :-D </p>
+  <p><a href="http://2210media.com/menu_dock/menu_dock.zip" target="_blank"><img src="download_btn.jpg" alt="webber 2.0 baby!" width="226" height="90" border="0" /></a></p>
+  <p>Inside the zip you will find these files:</p>
+  <ul>
+    <li>index.html</li>
+    <li>styles.css</li>
+    <li>hide_menu.js</li>
+    <li>7 images used for the menu and this page. </li>
+    </ul>
+  <p>Please note that the images for the menu are .pngs with transparency. If you are using Internet Explorer 6 or below, you will not see the transparency. You can change the images out to gifs, jpegs or whatever suits your fancy ;-) </p>
+  <p>Now, lets get on with the Webber 2.0 Dock Menu!</p>
+  <hr>
+  <h1>The HTML and CSS</h1>
+  <p>Lets take a look at the HTML and CSS together. I find it easier to learn when I go over one thing at a time.</p>
+  <p>Make sure you add the code to include the hide_menu.js in between the &lt;head&gt; tags. </p>
+  <p><code>&lt;script type=&quot;text/javascript&quot; src=&quot;hide_menu.js&quot;&gt;&lt;/script&gt;</code></p>
+  <p>First thing we need to add is the invisible <strong>hit_area</strong> div that will be positioned at the very top by default since it is the  first element in the body. In this case I made the hit area 100% wide and 120px height. This gives an adequate area for the mouse to activate the menu.</p>
+  <p><code>&lt;div id=&quot;hit_area&quot;&gt;&lt;/div&gt;</code></p>
+  <p><code>#hit_area {<br />
+  height: 120px;<br />
+  width: 100%;<br />
+  margin: 0px;<br />
+  padding: 0px;<br />
+  display: block;<br />
+  background-image: url(badge.jpg);<br />
+  background-repeat: no-repeat;<br />
+  }</code>
+</p>
+<hr>
+  <p>Next we add the <strong>menu_holde</strong>r div which is what will slide the menu down. The trick with this div is to position it absolutely at a negative value. In this case I used top: -58px, which is the height of the menu png. It is also very important that the height be 58px and the width be 100% and display is set to block.</p>
+  <p><code> &lt;div id=&quot;hit_area&quot;&gt;&lt;/div&gt;<br /> 
+&lt;div id=&quot;menu_holder&quot;&gt;<br />
+<br /> 
+      &lt;/div&gt;
+  </code></p>
+  <p>
+<code>
+#menu_holder {<br />
+	height: 58px;<br />
+	width: 100%;<br />
+	display: block;<br />
+	position: absolute;<br />
+	top: -58px;<br />
+}
+</code></p>
+<hr>
+<p>Inside the menu_holder div we insert the <strong>nav</strong> div. The nav div is used pretty much for a container for the menu so we can center it in the page horizontally as well as a place to insert the right side rounded corner image. </p>
+ <p><code>&lt;div id=&quot;hit_area&quot;&gt;&lt;/div&gt;<br />
+   &lt;div id=&quot;menu_holder&quot;&gt;<br />
+&lt;div id=&quot;nav&quot;&gt;<br />
+<br />
+&lt;/div&gt;<br />
+&lt;/div&gt;</code>
+</p>
+ <p><code>#nav {<br />
+height: 58px;<br />
+width: 542px;<br />
+margin: 0px auto;<br />
+padding: 0px;<br />
+background-image: url(right.png);<br />
+background-repeat: no-repeat;<br />
+background-position: right;<br />
+}</code></p>
+<hr>
+ <p>Inside the nav we add an &lt;ul&gt; and our links. Then we use a little more CSS to style the &lt;ul&gt; and &lt;li&gt;. One thing I will mention is that the &lt;li&gt; tags need to be floated left. Other wise the &lt;ul&gt; will be vertical and not horizontal. A couple other tricks is to use text-align center on the &lt;li&gt;, to center horizontally, and to use a line height that is equal to the height of the nav to center the text vertically. In this case its 58px. You will also see that for the &lt;ul&gt; I added a background image for the  left side rounded corner image. I then added some left padding that is the width of the image, 21px. </p>
+ <p><code>&lt;div id=&quot;hit_area&quot;&gt;&lt;/div&gt;<br />
+   &lt;div id=&quot;menu_holder&quot;&gt;<br />
+&lt;div id=&quot;nav&quot;&gt;<br />
+&lt;ul&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://jstween.blogspot.com&quot;&gt;jstween&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://ww.2210media.com&quot;&gt;2210media&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://www.digg.com&quot;&gt;Digg&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://www.cssmania.com&quot;&gt;CSS Mania&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://www.kirupa.com&quot;&gt;Kirupa&lt;/a&gt;&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+&lt;/div&gt;<br />
+&lt;/div&gt;</code></p>
+ <p><code>#nav ul {<br />
+margin: 0px;<br />
+padding: 0px 0px 0px 21px;<br />
+height: 58px;<br />
+list-style-type: none;<br />
+background-image: url(left.png);<br />
+background-repeat: no-repeat;<br />
+}<br />
+#nav li{<br />
+margin: 0px;<br />
+padding: 0px;<br />
+float: left;<br />
+}<br />
+#nav li a:link, #nav li a:active, #nav li a:visited {<br />
+background-image: url(middle.png);<br />
+background-repeat: repeat-x;<br />
+height: 58px;<br />
+width: 100px;<br />
+display: block;<br />
+line-height: 58px;<br />
+font-weight: bold;<br />
+color: #666666;<br />
+text-decoration: none;<br />
+font-family: Arial, Helvetica, sans-serif;<br />
+text-align: center;<br />
+font-size: 120%;<br />
+}<br />
+#nav li a:focus, #nav li a:hover{<br />
+text-decoration : none;<br />
+-moz-outline:0;<br />
+color: #FFFFFF;<br />
+background-image: url(rollOver.png);<br />
+background-repeat: repeat-x;<br />
+}</code></p>
+<hr>
+ <p>Next we add the div that we use to move the menu back up. In this case I used a container that will wrap the content that you are reading now and just called it <strong>hit_test2</strong>. You could actually assign the event to move the menu back up to any div you please. </p>
+ <p><code>&lt;div id=&quot;hit_area&quot;&gt;&lt;/div&gt;<br />
+&lt;div id=&quot;menu_holder&quot;&gt;<br />
+&lt;div id=&quot;nav&quot;&gt;<br />
+&lt;ul&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://jstween.blogspot.com&quot;&gt;jstween&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://ww.2210media.com&quot;&gt;2210media&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://www.digg.com&quot;&gt;Digg&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://www.cssmania.com&quot;&gt;CSS Mania&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://www.kirupa.com&quot;&gt;Kirupa&lt;/a&gt;&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+&lt;/div&gt;<br />
+&lt;/div&gt;<br />
+&lt;div id=&quot;hit_area2&quot;&gt;<br /> 
+&lt;!-- tutorial content here --&gt; <br />
+&lt;/div&gt;
+ </code></p>
+ <p><code>#hit_area2 {<br />
+width: 100%;<br />
+background-image: url(activate_text.jpg);<br />
+background-repeat: no-repeat;<br />
+background-position: center top;<br />
+padding: 0px;<br />
+display: block;<br />
+position: absolute;<br />
+margin: 0px;<br />
+left: 0px;<br />
+top: 120px;<br />
+}</code></p>
+ <hr />
+ <p>Lastly we add the onmouseover events to call the functions to slide the menu up or down on our two <strong>hit_area</strong> divs.</p>
+ <p><code>&lt;div id=&quot;hit_area&quot; <strong>onmouseover=&quot;toggleDown();&quot;</strong>&gt;&lt;/div&gt;<br />
+&lt;div id=&quot;menu_holder&quot;&gt;<br />
+&lt;div id=&quot;nav&quot;&gt;<br />
+&lt;ul&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://jstween.blogspot.com&quot;&gt;jstween&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://ww.2210media.com&quot;&gt;2210media&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://www.digg.com&quot;&gt;Digg&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://www.cssmania.com&quot;&gt;CSS Mania&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;a href=&quot;http://www.kirupa.com&quot;&gt;Kirupa&lt;/a&gt;&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+&lt;/div&gt;<br />
+&lt;/div&gt;<br />
+&lt;div id=&quot;hit_area2&quot; <strong>onmouseover=&quot;toggleUp();&quot;</strong>&gt;<br />
+&lt;!-- tutorial content here --&gt; <br />
+&lt;/div&gt; </code></p>
+ <hr />
+ <h1>The javascript </h1>
+ <p>Inside the hide_menu.js all I added was a function to initiate the onmouseover events for the divs to activate the menu. Please make sure you read the documentation on  <a href="http://jstween.blogspot.com/" target="_blank">Philippe Maegerman's blog</a> to understand what everything is doing inside the functions. Everything below these two functions  is the javascript tween code written by <a href="http://jstween.blogspot.com/" target="_blank">Philippe Maegerman</a>. </p>
+ <p><code>// define a var down to false <br />
+   var down = false;<br />
+   <br />
+   // if down equals false and the mouse is over the div hit_area, slide the menu down <br />
+   function toggleDown() {<br />
+if(down==false){<br />
+down=true;<br />
+t1 = new Tween(document.getElementById('menu_holder').style, 'top', Tween.strongEaseOut, -58, 0, .6, 'px');<br />
+t1.start();<br />
+}<br />
+}<br />
+<br />
+// if down equals true and the mouse is over the div hit_area2, slide the menu up <br />
+function toggleUp() {<br />
+if(down==true){<br />
+down=false;<br />
+t1 = new Tween(document.getElementById('menu_holder').style, 'top', Tween.strongEaseIn, 0, -58, .4, 'px');<br />
+t1.start();<br />
+}<br />
+}</code></p>
+ <p>And thats it! Its very simple method to add some fun interactivity to your web site. If you read the documentation over at <a href="http://jstween.blogspot.com/" target="_blank">Philippe Maegerman's blog</a>, you will soon realize that there are MANY things you can do with his fabulous tween code. If you have any questions, feel free to contact me through my web site at <a href="http://www.2210media.com" target="_blank">www.2210media.com</a>. </p>
+ <p>Thanks for taking the time to read this and hopefully you learned something!<br />
+   Peace!
+   <br />
+   Josh Rhame
+</p>
+ <p><strong>p.s.</strong> A couple things to note. If you move the mouse spasticly over the two divs, yes, the menu will freak out some. I am not a hardcore coder, so if you know of a way to clean it up, have at it! :-) </p>
+ <p><strong>p.s.s.</strong> Yes, Im making fun of the phrase web 2.0, which I think is totally dumb ;-) </p>
+</div>
+</div>
+</body>
+</html>

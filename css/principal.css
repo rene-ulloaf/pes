@@ -1,0 +1,163 @@
+/*CUERPO DE LA PAGINA*/
+	body {
+		margin-left: 0px;
+		margin-top: 0px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+		overflow-y:auto;
+		overflow-x:auto;
+	}
+
+/*TEXTOS (ETIQUETAS)*/
+	LABEL{
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		font-style: normal;
+		font-weight: bold;
+		font-variant: normal;
+		text-transform: none;
+		color: #000000;
+		text-decoration: none;
+	}
+	
+	LEGEND{
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: bold;
+		font-variant: normal;
+		text-transform: none;
+		color: #000066;
+		text-decoration: none;
+	}
+	
+	BUTTON{
+		background-color:#BBCADE;
+	}
+	.texto 
+	{
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		color: #000000;
+		text-decoration: none;
+	}
+	.textonegro {
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		font-style: normal;
+		font-weight: bold;
+		font-variant: normal;
+		text-transform: none;
+		color: #000000;
+		text-decoration: none;
+	}
+	.textoazul {
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: bold;
+		font-variant: normal;
+		text-transform: none;
+		color: #000066;
+		text-decoration: none;
+	}
+	.textorojo {
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: bold;
+		font-variant: normal;
+		text-transform: none;
+		color: #BE0303;
+		text-decoration: none;
+	}
+	.textoblanco {
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: bold;
+		font-variant: normal;
+		text-transform: none;
+		color: #FFFFFF;
+		text-decoration: none;
+	}
+	.textotitular 
+	{
+		font-family: Geneva, Arial, Helvetica, sans-serif;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: bold;
+		font-variant: normal;
+		text-transform: none;
+		color: #000000;
+		text-decoration: none;
+	}
+	.titulosistema 
+	{
+		font-family: Geneva, Arial, Helvetica, sans-serif;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: bold;
+		font-variant: normal;
+		text-transform: none;
+		color: #ffffff;
+		text-decoration: none;
+		height:49px;
+		background: #2F59A3 url(../img/silver/top/bg_titular.jpg);
+	}
+/*CAMPOS*/
+
+	.txt_obligatorio 
+	{
+		background-color: #E0F4FE;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		color: #000000;
+		text-decoration: none;
+	}
+	.txt_obligatorio_error
+	{
+		background-color: #E0F4FE;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		color: #000000;
+		text-decoration: none;
+		border-color: red;
+	}
+	.txt_editables 
+	{
+		background-color: #FFFFFF;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		color: #000000;
+		text-decoration: none;
+	}
+	.txt_no_editables 
+	{
+		background-color: #F3F1E8;
+		border: 1px solid #000000;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		color: #000000;
+		text-decoration: none;
+	}
